@@ -26,7 +26,11 @@ fetch('https://raw.githubusercontent.com/IslemBenAlaya/CellularTours/main/Bell%2
   .then(function(data) {
     bellLayer.addData(data);
     map.fitBounds(bellLayer.getBounds()); // Adjust the map bounds to fit the GeoJSON layer
+  })
+  .catch(function(error) {
+    console.error('Error:', error);
   });
+
 
   // Function to toggle a layer
   function toggleLayer(layer, button) {
